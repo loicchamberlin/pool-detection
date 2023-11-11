@@ -1,5 +1,7 @@
 # Folder
 Images/
+.ipynb_checkpoints
 .vscode
 .venv/
 .DS_Store
+output/
