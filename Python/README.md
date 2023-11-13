@@ -22,8 +22,8 @@ Here's my few things to do in order to understand the poor performance of my mod
 
 ## Usage/Examples
 
-- In [dataset_analysis.ipynb](addalink.fr), you can perform a dataset analysis in order to get statistical informations about the color characteristics of your dataset. For instance, this helps to define what could be the difference between two datasets. 
+- In [dataset_analysis.ipynb](https://github.com/loicchamberlin/pool-detection/blob/main/Python/dataset_analysis.ipynb), you can perform a dataset analysis in order to get statistical informations about the color characteristics of your dataset. For instance, this helps to define what could be the difference between two datasets. 
 
-- In [model_training.ipynb](addalink.fr), you can perform the training of a dataset using Detectron2 library. You can also evaluate the performance of your model within this jupyter notebook.
+- In [model_training.ipynb](https://github.com/loicchamberlin/pool-detection/blob/main/Python/model_training.ipynb), you can perform the training of a dataset using Detectron2 library. You can also evaluate the performance of your model within this jupyter notebook.
 
 
