@@ -4,8 +4,8 @@ Part of the project where I train models and evaluate them.
 
 Here's my few things to do in order to understand the poor performance of my models : 
     
-    1. Visual Inspection: Examine predictions on new images to identify specific patterns of failure. Look for common scenarios where the model struggles.
-        a. Create functions to display the results of inference and to compare between models easily
+1. Visual Inspection: Examine predictions on new images to identify specific patterns of failure. Look for common scenarios where the model struggles.
+   - Create functions to display the results of inference and to compare between models easily
 
     2. Metrics Analysis: Evaluate performance using different metrics and consider breaking down performance by different classes to identify if certain classes are particularly challenging.
         a. Define the metrics the metrics to use 
