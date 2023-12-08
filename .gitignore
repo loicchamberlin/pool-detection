@@ -3,5 +3,13 @@ Python/Images/
 .ipynb_checkpoints
 .vscode
 .venv/
-.DS_Store
 output/
+vcpkg/
+build/
+ressources/
+
+# files
+.DS_Store
+CMakeLists.txt
+CMakeUserPresets.json
+conanfile.txt
