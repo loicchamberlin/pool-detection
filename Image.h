@@ -18,6 +18,7 @@ public:
     ~Image(){}; // std::cout << "Image destroyed" << std::endl; };
 
     const cv::Mat get_image() const { return cv::imread(_image_path); };
+    void set_image(cv::Mat image_new) { cv::imwrite(_image_path, image_new); };
 
     const std::string get_image_name() const { return _name; };
     const std::string get_image_path() const { return _image_path; };

@@ -13,7 +13,9 @@ int main(int argc, char **argv)
 
     // Reading the image file
     std::string name = "ballonviolet";
-    std::string image_path = "../ressources/Images/Images_raw/ballon.jpg";
+    std::string image_path = "./ressources/Images/Images_raw/gojo4k.jpg";
+    // std::cout << "Give me an image path" << std::endl;
+    // std::cin >> image_path;
     std::string address = "40160 Ychoux, France";
 
     Image my_img{image_path, name};
@@ -25,14 +27,22 @@ int main(int argc, char **argv)
         std::cerr << "Could not open or find the image." << std::endl;
         return -1;
     }
+    else
+    {
+        first_dataset.create_imagette();
 
-    first_dataset.create_imagette();
+        // first_dataset.list_dataset();
 
-    first_dataset.list_dataset();
+        first_dataset.apply_inference();
+        first_dataset.recreate_image();
+        first_dataset.delete_imagette_files();
 
-    first_dataset.delete_imagette_files();
+        Geodata dateee{address};
 
-    cv::destroyAllWindows();
+        std::cout << dateee.get_address() << std::endl;
 
-    return 0;
+        cv::destroyAllWindows();
+
+        return 0;
+    }
 }

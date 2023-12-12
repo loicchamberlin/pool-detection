@@ -6,8 +6,8 @@ class Dataset
 {
 private:
     int _lenght = 0;
-    std::string _path_to_imagette = "../ressources/Images/Images_cropped/";
-    std::string _path_to_main_image = "../ressources/Images/Images_raw/";
+    std::string _path_to_imagette = "./ressources/Images/Images_cropped/";
+    std::string _path_to_main_image = "./ressources/Images/Images_raw/";
     const Image _main_image;
     std::vector<Imagette> _imagette_dataset;
 
@@ -19,6 +19,6 @@ public:
     void create_imagette();       // create the dataset + save the imagette into _path_to_imagette
     void delete_imagette_files(); // free the folder _path_to_imagette from the imagette precedently saved
 
-    void glue_imagette();   // glue back together imagette processed by inference with pools drawn
+    void recreate_image();  // glue back together imagette processed by inference with pools drawn
     void apply_inference(); // for the moment, random rectangle drawn onto the imagette
 };
