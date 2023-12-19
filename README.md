@@ -54,5 +54,8 @@ Problematic : Is it possible to simply detect pools using Computer Vision on map
     - Write an article (can be segmented in 3 parts)
     - Write examples
 
+## Installation
 
+`git clone --recursive <your_repository_url>
+`
 
