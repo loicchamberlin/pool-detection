@@ -10,7 +10,7 @@ void Dataset::create_imagette()
 {
     cv::Mat image_to_crop = _main_image.get_image();
     int resolution = 224;
-    int size = 224;
+    int size = 448;
 
     int height = image_to_crop.rows;
     int width = image_to_crop.cols;
@@ -110,4 +110,8 @@ void Dataset::list_dataset()
     {
         std::cout << "Here's lie the image number " << i << " : " << _imagette_dataset[i].get_image_name() << std::endl;
     }
+}
+
+void Dataset::get_main_image()
+{
 }

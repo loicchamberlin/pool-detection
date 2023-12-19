@@ -7,6 +7,7 @@ output/
 vcpkg/
 build/
 ressources/
+Python/satellite-imagery-downloader
 
 # files
 .DS_Store
