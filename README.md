@@ -10,7 +10,7 @@ Problematic : Is it possible to simply detect pools using Computer Vision on map
 - List of geographical positions (longitude, latitude)
 
 
-## Process of main.py
+## Process of [main.py](https://github.com/loicchamberlin/pool-detection/blob/main/Python/main.py)
 
 1. Get the geolocalisation of the town (longitude,latitude)
 2. Use this [project](https://github.com/andolg/satellite-imagery-downloader) to download the main image of the chosen town 
