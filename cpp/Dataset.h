@@ -6,8 +6,8 @@ class Dataset
 {
 private:
     int _lenght = 0;
-    std::string _path_to_imagette = "./ressources/Images/Images_cropped/";
-    std::string _path_to_main_image = "./ressources/Images/Images_raw/";
+    const std::string _path_to_imagette = "./ressources/Images/Images_cropped/";
+    const std::string _path_to_main_image = "./ressources/Images/Images_raw/";
 
     const Image _main_image;
     std::vector<Imagette> _imagette_dataset;
