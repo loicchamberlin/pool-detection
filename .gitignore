@@ -10,6 +10,7 @@ ressources/
 Python/satellite-imagery-downloader
 Python/pool_detection/__pycache__
 Python/pool_detection/ImageClass/__pycache__
+Python/pool_detection/GeoData/__pycache__
 
 
 # files
