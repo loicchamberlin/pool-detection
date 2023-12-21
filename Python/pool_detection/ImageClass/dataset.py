@@ -78,6 +78,8 @@ class Dataset:
 
     def apply_inference(self):
         for imagette in self.list_imagette:
+            # simple modification of the imagette, next thing is to
+            # add bounding box from the inference data
             pt1 = (20, 20)
             pt2 = (200, 200)
             imagette_tmp = imagette.get_image()
