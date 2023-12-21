@@ -11,5 +11,3 @@ first_dataset.create_imagette()
 
 first_dataset.apply_inference()
 first_dataset.recreate_image()
-
-first_dataset.delete_imagette_files()

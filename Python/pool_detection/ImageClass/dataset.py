@@ -3,6 +3,7 @@ from pool_detection.ImageClass.imagette import Imagette
 
 import cv2
 import os
+import numpy as np
 
 
 class Dataset:
@@ -64,5 +65,22 @@ class Dataset:
         compositeHeight = (maxX + 1) * len(self.list_imagette[0].get_image())
         compositeWidth = (maxY + 1) * len(self.list_imagette[0].get_image()[0])
 
+        image_ = np.zeros((compositeHeight, compositeWidth, 3), dtype='uint8')
+
+        for imagette in self.list_imagette:
+            imagette_height = len(self.list_imagette[0].get_image())
+            imagette_width = len(self.list_imagette[0].get_image()[0])
+            image_[imagette.get_pos_x() * imagette_height:(imagette.get_pos_x()+1) * imagette_height,
+                   imagette.get_pos_y() * imagette_width:(imagette.get_pos_y()+1) * imagette_width] = imagette.get_image()
+
+        cv2.imwrite("./ressources/Images/Images_processed/" +
+                    self.main_image.get_image_name() + "_processed.jpg", image_)
+
     def apply_inference(self):
-        pass
+        for imagette in self.list_imagette:
+            pt1 = (20, 20)
+            pt2 = (200, 200)
+            imagette_tmp = imagette.get_image()
+            cv2.rectangle(imagette_tmp, pt1, pt2, (0, 0, 255), 2)
+
+            imagette.set_image(imagette_tmp)
