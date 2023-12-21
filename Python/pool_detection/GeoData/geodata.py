@@ -14,7 +14,7 @@ class GeoData:
     def get_longitude(self):
         return self.longitude
 
-    def get_latittude(self):
+    def get_latitude(self):
         return self.latitude
 
     def retrieve_geolocalisation(self) -> (float, float):
@@ -33,6 +33,7 @@ class GeoData:
             my_json = r.content.decode('utf-8')
             data = json.loads(my_json)
 
-            return float(data[0]['lat']), float(data[0]['lon'])
+            self.latitude = float(data[0]['lon'])
+            self.longitude = float(data[0]['lat'])
         except:
             return print(f'The address : {self.address} is invalid.')
