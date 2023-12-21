@@ -1,3 +1,0 @@
-[submodule "Python/pool-detection/utils"]
-	path = Python/pool-detection/utils
-	url = git@github.com:andolg/satellite-imagery-downloader.git

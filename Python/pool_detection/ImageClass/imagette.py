@@ -1,4 +1,4 @@
-from image import Image
+from pool_detection.ImageClass.image import Image
 
 
 class Imagette(Image):
