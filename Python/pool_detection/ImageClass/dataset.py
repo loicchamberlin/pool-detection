@@ -1,5 +1,7 @@
 from pool_detection.ImageClass.image import Image
 from pool_detection.ImageClass.imagette import Imagette
+from pool_detection.GeoData.geodata import GeoData
+
 
 import cv2
 import os
