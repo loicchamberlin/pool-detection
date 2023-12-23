@@ -13,7 +13,7 @@ Problematic : Is it possible to simply detect pools using Computer Vision on map
 ## Process of [main.py](https://github.com/loicchamberlin/pool-detection/blob/main/Python/main.py)
 
 1. Get the geolocalisation of the town (longitude,latitude)
-2. Use this [project](https://github.com/andolg/satellite-imagery-downloader) to download the main image of the chosen town 
+2. Use of functions of this [project](https://github.com/andolg/satellite-imagery-downloader) to download the main image of the chosen town 
 3. Cut the Main Image into multiple Imagette that have the required format for the Deep Learning Model (224,224,3)
 4. Iterate the inference process through the imagette
 5. Retrieve the data from the inference
