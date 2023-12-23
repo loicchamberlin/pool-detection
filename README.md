@@ -35,9 +35,10 @@ Problematic : Is it possible to simply detect pools using Computer Vision on map
 2. Python : 
     - Install detectron2 and discover its usage : DONE
     - Save a first basic RCNN model for tests : DONE
-    - Reorganize the directory for OOP usage : TO DO
-    - Recreate the OOP Structure from my C++ program into Python : TO DO
+    - Reorganize the directory for OOP usage : DONE
+    - Recreate the OOP Structure from my C++ program into Python : DONE
     - Add a function to convert pixel position *(x,y)* to geolocalisation *(longitude, latitude)* : TO DO
+    - Modify geodata.py function download_satellite_image() to save the image with a right name : TO DO
     - Create unitest : TO DO
     - Create functionnalities for inference use : TO DO
     - Add UI to simplify use : TO DO
@@ -56,6 +57,4 @@ Problematic : Is it possible to simply detect pools using Computer Vision on map
 
 ## Installation
 
-`git clone --recursive <your_repository_url>
-`
 

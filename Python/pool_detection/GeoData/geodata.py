@@ -112,9 +112,6 @@ class GeoData:
             return cv2.imdecode(arr, 1)
         return cv2.imdecode(arr, -1)
 
-    # Mercator projection
-    # https://developers.google.com/maps/documentation/javascript/examples/map-coordinates
-
     def project_with_scale(self, lat, lon, scale):
         siny = np.sin(lat * np.pi / 180)
         siny = min(max(siny, -0.9999), 0.9999)
