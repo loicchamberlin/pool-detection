@@ -18,3 +18,4 @@ Python/pool_detection/GeoData/__pycache__
 CMakeLists.txt
 CMakeUserPresets.json
 conanfile.txt
+.env

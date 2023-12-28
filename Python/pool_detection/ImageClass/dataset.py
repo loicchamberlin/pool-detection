@@ -1,6 +1,5 @@
 from pool_detection.ImageClass.image import Image
 from pool_detection.ImageClass.imagette import Imagette
-from pool_detection.GeoData.geodata import GeoData
 
 
 import cv2
@@ -9,13 +8,13 @@ import numpy as np
 
 
 class Dataset:
-    length = 0
     path_to_imagette = "./ressources/Images/Images_cropped/"
     path_to_main_image = "./ressources/Images/Images_raw/"
 
     def __init__(self, main_image: Image) -> None:
         self.main_image = main_image
         self.list_imagette = []
+        self.length = 0
 
     def list_dataset(self):
         for index, imagette in enumerate(self.list_imagette):
@@ -26,7 +25,6 @@ class Dataset:
         pass
 
     def create_imagette(self):
-        print(self.main_image.get_image_name())
         image_to_crop = self.main_image.get_image()
         resolution = 224
         size = 448
@@ -53,6 +51,7 @@ class Dataset:
                     imagette_tmp_path, imagette_tmp_name, i, j)
 
                 self.list_imagette.append(imagette_tmp)
+                self.length += 1
 
     def delete_imagette_files(self):
         for imagette_path in os.listdir(self.path_to_imagette):
