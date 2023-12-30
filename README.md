@@ -37,9 +37,9 @@ Problematic : Is it possible to simply detect pools using Computer Vision on map
     - Save a first basic RCNN model for tests : DONE
     - Reorganize the directory for OOP usage : DONE
     - Recreate the OOP Structure from my C++ program into Python : DONE
-    - Add a function to convert pixel position *(x,y)* to geolocalisation *(longitude, latitude)* : TO DO
-    - Modify geodata.py function download_satellite_image() to save the image with a right name : TO DO
-    - Create unitest : TO DO
+    - Add a function to convert pixel position *(x,y)* to geolocalisation *(longitude, latitude)* : DONE
+    - Modify geodata.py function download_satellite_image() to save the image with a right name : DONE
+    - Create unitests : TO DO
     - Create functionnalities for inference use : TO DO
     - Add UI to simplify use : TO DO
 
@@ -58,7 +58,7 @@ Problematic : Is it possible to simply detect pools using Computer Vision on map
 ## Installation
 
 In order to use this project, an API key is needed.
-You'll need to create an account on (geocode)[https://geocode.maps.co] and create an account.
+You'll need to create an account on [geocode](https://geocode.maps.co) and create an account.
 
 Then, when you have an API key, you can add it to your .env file.
 ```GEOCODE_API_KEY=[add the API key here]``
