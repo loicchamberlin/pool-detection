@@ -20,3 +20,6 @@ class Image:
 
     def get_image_path(self):
         return self.image_path
+    
+    def get_size(self):
+        return len(self.get_image()), len(self.get_image()[0])

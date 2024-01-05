@@ -55,9 +55,9 @@ class GeoData:
             self.longitude = float(data[0]['lat'])
 
             self.bottomright_geoloc = (
-                self.longitude - 0.002, self.latitude + 0.005)
+                self.longitude - 0.002, self.latitude + 0.003)
             self.topleft_geoloc = (
-                self.longitude + 0.002, self.latitude - 0.005)
+                self.longitude + 0.002, self.latitude - 0.003)
         except:
             return print(f'The address : {self.address} is invalid.')
 

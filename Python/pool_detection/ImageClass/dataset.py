@@ -42,6 +42,8 @@ class Dataset:
         self.main_image = main_image
         self.list_imagette = []
         self.length = 0
+        self.number_of_pools = 0
+        self.list_coordinates_pools = []
 
     def list_dataset(self):
         for index, imagette in enumerate(self.list_imagette):
@@ -100,6 +102,10 @@ class Dataset:
             imagette_width = len(self.list_imagette[0].get_image()[0])
             image_[imagette.get_pos_x() * imagette_height:(imagette.get_pos_x()+1) * imagette_height,
                    imagette.get_pos_y() * imagette_width:(imagette.get_pos_y()+1) * imagette_width] = imagette.get_image()
+            
+        
+        for coord in self.list_coordinates_pools:
+            image_[coord[1]-5:coord[1]+5, coord[0]-5:coord[0]+5] = (0,0,255)
 
         cv2.imwrite("./ressources/Images/Images_processed/" +
                     self.main_image.get_image_name() + "_processed.jpg", image_)
@@ -114,6 +120,32 @@ class Dataset:
             imagette_tmp = imagette.get_image()
 
             outputs = predictor(imagette_tmp)  # format is documented at https://detectron2.readthedocs.io/tutorials/models.html#model-output-format
+
+            for output in outputs["instances"].get('pred_boxes'):
+                output = output.cpu().numpy()
+
+                x, y = imagette.get_pos_x(), imagette.get_pos_y()
+
+                pos_x_tl = output[0]
+                pos_y_tl = output[1]
+                pos_x_br = output[2]
+                pos_y_br = output[3]
+
+                mid_pos_x = (pos_x_tl + pos_x_br) / 2
+                mid_pos_y = (pos_y_tl + pos_y_br) / 2
+
+                height, width = imagette.get_size()
+
+                coord_x, coord_y = int(mid_pos_x + height * y), int(mid_pos_y + width * x)
+
+                self.list_coordinates_pools.append((coord_x,coord_y))
+                self.number_of_pools +=1
+
             v = Visualizer(imagette_tmp[:, :, ::-1], scale=1)
             out = v.draw_instance_predictions(outputs["instances"].to("cpu"))
             imagette.set_image(out.get_image()[:, :, ::-1])
+
+
+        print(self.number_of_pools)
+        print('')
+        print(self.list_coordinates_pools)
