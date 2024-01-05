@@ -11,8 +11,8 @@ class GeoData:
         self.address = address
         self.longitude = 0
         self.latitude = 0
-        self.topleft_geoloc = 0
-        self.bottomright_geoloc = 0
+        self.topleft_geoloc = (0,0)
+        self.bottomright_geoloc = (0,0)
         self.zoom = 20
         self.path_to_main_image = "./ressources/Images/Images_raw/"
         self.filename = ""
@@ -116,9 +116,7 @@ class GeoData:
         img = cv2.imread(self.get_filepath())
 
         width, height = len(img), len(img[0])
-        width_geoloc, height_geoloc = self.bottomright_geoloc[0] - \
-            self.topleft_geoloc[0], self.bottomright_geoloc[1] - \
-            self.topleft_geoloc[1]
+        width_geoloc, height_geoloc = self.bottomright_geoloc[0] - self.topleft_geoloc[0], self.bottomright_geoloc[1] - self.topleft_geoloc[1]
 
         res_x, res_y = width_geoloc / width, height_geoloc / height
 
