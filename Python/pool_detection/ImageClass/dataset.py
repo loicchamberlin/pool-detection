@@ -21,6 +21,7 @@ class Dataset:
         self.length = 0
         self.number_of_pools = 0
         self.list_coordinates_pools = []
+        self.list_geocoordinates_pools = []
 
     def list_dataset(self):
         for index, imagette in enumerate(self.list_imagette):
@@ -115,10 +116,12 @@ class Dataset:
 
                 coord_x, coord_y = int(mid_pos_x + height * y), int(mid_pos_y + width * x)
 
-                geoloc_x, geoloc_y = self.address.convert_pixel_to_geolocalisation(coord_x, coord_y) # add this to a list and then, verify why it's only [(0.0,0.0), ... ]
+                geoloc_x, geoloc_y = self.address.convert_pixel_to_geolocalisation(coord_x, coord_y) 
 
                 self.list_coordinates_pools.append((coord_x, coord_y))
+                self.list_geocoordinates_pools.append((geoloc_x, geoloc_y))
                 self.number_of_pools +=1
+
 
             v = Visualizer(imagette_tmp[:, :, ::-1], scale=1)
             out = v.draw_instance_predictions(outputs["instances"].to("cpu"))
@@ -128,3 +131,7 @@ class Dataset:
         print(self.number_of_pools)
         print('')
         print(self.list_coordinates_pools)
+        print('')
+        print(self.list_geocoordinates_pools)
+
+

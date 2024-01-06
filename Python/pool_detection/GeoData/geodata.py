@@ -64,9 +64,11 @@ class GeoData:
     def download_satellite_image(self):
         self.filename = self.address.replace(',', '_').replace(
             ' ', '_').replace('__', '_') + ".jpg"
+        
+        self.retrieve_geolocalisation()
 
         if not (os.path.isfile(self.path_to_main_image + self.filename)):
-            self.retrieve_geolocalisation()
+            
 
             default_prefs = {
                 'url': 'https://mt.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',
