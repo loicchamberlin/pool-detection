@@ -3,7 +3,7 @@
 Problematic : Is it possible to simply detect pools using Computer Vision on maps ?
 
 **Input** : 
-- Name of a town (string)
+- Existing address (string)
 
 **Output** : 
 - Number of pools (integer)
