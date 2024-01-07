@@ -7,13 +7,13 @@ from pool_detection.GeoData.image_downloading import download_image
 
 
 class GeoData:
-    def __init__(self, address: str) -> None:
+    def __init__(self, address: str, zoom = 20) -> None:
         self.address = address
         self.longitude = 0
         self.latitude = 0
         self.topleft_geoloc = (0,0)
         self.bottomright_geoloc = (0,0)
-        self.zoom = 20
+        self.zoom = zoom
         self.path_to_main_image = "./ressources/Images/Images_raw/"
         self.filename = ""
 
@@ -45,9 +45,10 @@ class GeoData:
         geocode_api_key = os.environ['GEOCODE_API_KEY']
 
         try:
-            r = requests.get(
-                f'https://geocode.maps.co/search?q={address_withplus}&api_key={geocode_api_key}')
-
+            url = f'https://geocode.maps.co/search?q={address_withplus}&api_key={geocode_api_key}'
+            # print(url)
+            r = requests.get(url)
+            
             my_json = r.content.decode('utf-8')
             data = json.loads(my_json)
 
@@ -63,7 +64,7 @@ class GeoData:
 
     def download_satellite_image(self):
         self.filename = self.address.replace(',', '_').replace(
-            ' ', '_').replace('__', '_') + ".jpg"
+            ' ', '_').replace('__', '_') + '_zoom_' + str(self.zoom) +".jpg"
         
         self.retrieve_geolocalisation()
 

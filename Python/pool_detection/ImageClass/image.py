@@ -2,9 +2,8 @@ import cv2
 
 
 class Image:
-    def __init__(self, image_path: str, name: str) -> None:
+    def __init__(self, image_path: str) -> None:
         self.image_path = image_path
-        self.name = name
 
     def get_image(self):
         return cv2.imread(self.image_path)
@@ -14,9 +13,6 @@ class Image:
 
     def save_image(self, save_path):
         cv2.imwrite(save_path, cv2.imread(self.image_path))
-
-    def get_image_name(self):
-        return self.name
 
     def get_image_path(self):
         return self.image_path
