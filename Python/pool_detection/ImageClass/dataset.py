@@ -1,7 +1,7 @@
 from pool_detection.ImageClass.image import Image
 from pool_detection.ImageClass.imagette import Imagette
 from pool_detection.GeoData.geodata import GeoData
-from pool_detection.ImageClass.config_deeplearning_model import create_config
+from pool_detection.utils.config_deeplearning_model import create_config
 
 import cv2
 import os

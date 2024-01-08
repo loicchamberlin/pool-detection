@@ -3,7 +3,7 @@ import json
 import cv2
 import os
 
-from pool_detection.GeoData.image_downloading import download_image
+from pool_detection.utils.image_downloading import download_image
 
 
 class GeoData:
