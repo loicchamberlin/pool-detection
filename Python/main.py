@@ -18,6 +18,7 @@ def get_input():
 def is_folder_structures_done():
     path_list = ["./ressources/",
                  "./ressources/model/",
+                 "./ressources/metadata/",
                  "./ressources/Images/Images_raw/",
                  "./ressources/Images/Images_processed/",
                  "./ressources/Images/Images_cropped/"]

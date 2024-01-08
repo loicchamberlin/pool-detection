@@ -10,7 +10,7 @@ from detectron2.engine import DefaultPredictor
 from detectron2.utils.visualizer import Visualizer
 
 from datetime import datetime
-
+import json
 
 class Dataset:
     path_to_imagette = "./ressources/Images/Images_cropped/"
@@ -97,13 +97,18 @@ class Dataset:
                     self.address.filename.replace('.jpg','') + "_processed.jpg", image_)
 
     def apply_inference(self):
-        cfg = create_config(weights_path="./output/model_final.pth")
+        cfg = create_config(weights_path="./ressources/model/PoolDetection_base_lr_0.002_max_iter_600_batch_size_per_img_512/model_final.pth")
         cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.7   # set a custom testing threshold
         predictor = DefaultPredictor(cfg)
         time1 = datetime.now()
         number = 0
+        
+        if os.path.isfile("./ressources/metadata/pool_metadata.json"):
+            with open("./ressources/metadata/pool_metadata.json", "r") as file:
+                metadata = json.load(file)
 
         for imagette in self.list_imagette:
+
             # add bounding box from the inference data
             number += 1
             imagette_tmp = imagette.get_image()
@@ -111,6 +116,7 @@ class Dataset:
             outputs = predictor(imagette_tmp)  # format is documented at https://detectron2.readthedocs.io/tutorials/models.html#model-output-format
 
             for output in outputs["instances"].get('pred_boxes'):
+                
                 output = output.cpu().numpy()
 
                 x, y = imagette.get_pos_x(), imagette.get_pos_y()
@@ -133,8 +139,10 @@ class Dataset:
                 self.list_geocoordinates_pools.append((geoloc_x, geoloc_y))
                 self.number_of_pools +=1
 
-
-            v = Visualizer(imagette_tmp[:, :, ::-1], scale=1)
+            if os.path.isfile("./ressources/metadata/pool_metadata.json"):
+                v = Visualizer(imagette_tmp[:, :, ::-1], metadata=metadata, scale=1)
+            else:
+                v = Visualizer(imagette_tmp[:, :, ::-1], scale=1)
             out = v.draw_instance_predictions(outputs["instances"].to("cpu"))
             imagette.set_image(out.get_image()[:, :, ::-1])
 
