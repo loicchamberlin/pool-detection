@@ -8,8 +8,6 @@ import os
 
 def get_input():
     parser = argparse.ArgumentParser()
-    # parser.add_argument("--save_path", type=str, default="./ressources/Images/Images_processed/" ,required=False, help='Saving path where you want to save the processed image')
-    # parser.add_argument("--image_name", type=str, required=True, help='Beginning of the image name that will be saved with for all cropped image')
     parser.add_argument("--address", type=str, required=True, help='address you want to use to detect pools around. Example : "12\ Chemin\ des\ Gardillots,\ 33610\ Cestas,\ France"')
     parser.add_argument("--zoom", type=int, default=19, required=False, help='Zoom used to download the image')
     args = parser.parse_args() 
