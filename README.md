@@ -64,5 +64,4 @@ Problematic : Is it possible to simply detect pools using Computer Vision on map
 In order to use this project, an API key is needed.
 You'll need to create an account on [geocode](https://geocode.maps.co) and create an account.
 
-Then, when you have an API key, you can add it to your .env file.
-```GEOCODE_API_KEY=[add the API key here]``` 
+Then, when you have an API key, you can add it to your .env file : ```GEOCODE_API_KEY=[add the API key here]``` 
