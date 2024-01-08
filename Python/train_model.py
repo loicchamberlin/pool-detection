@@ -86,6 +86,7 @@ def is_folder_structures_done():
 
 if __name__ == "__main__":
     inputs = get_input()
+    is_folder_structures_done()
 
 
     # Registering the data for the DatasetCatalog and MetadataCatalog

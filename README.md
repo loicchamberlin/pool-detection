@@ -3,7 +3,7 @@
 Problematic : Is it possible to simply detect pools using Computer Vision on maps ?
 
 **Input** : 
-- Existing address (string)
+- Existing address (string) [This format : "12\ Chemin\ des\ Gardillots,\ 33610\ Cestas,\ France"]
 
 **Output** : 
 - Number of pools (integer)
@@ -39,17 +39,17 @@ Problematic : Is it possible to simply detect pools using Computer Vision on map
     - Recreate the OOP Structure from my C++ program into Python : DONE
     - Add a function to convert pixel position *(x,y)* to geolocalisation *(longitude, latitude)* : DONE
     - Modify geodata.py function download_satellite_image() to save the image with a right name : DONE
-    - Modify the existing image are used in the program in order to avoid reading/writing them : TO DO
-    - Add a mean to save processed image with names that define they're characteristics : TO DO 
+    - Add a mean to save processed image with names that define they're characteristics : DONE 
     - Add description to methods, classes, etc : TO DO 
+    - Modify the existing image are used in the program in order to avoid reading/writing them : TO DO
+    - Create functionnalities for inference use : IN PROGRESS
     - Create unitests : TO DO
-    - Create functionnalities for inference use : TO DO
-    - Add UI to simplify use : TO DO
+    - Add UI to simplify use : TO DO (later)
 
 3. DEEP LEARNING in Python : 
     - Get deeper knowlegde of modifications that can be done in the training in order to get better results (mAP)
-    - Simplify the **Training Part** by creating a script *or* method in a class
-    - Simplify the **Evaluation Part** by creating a script *or* method in a class
+    - Simplify the **Training Part** by creating a script *or* method in a class : IN PROGRESS
+    - Simplify the **Evaluation Part** by creating a script *or* method in a class : TO DO
     - Add another models to compare the performance (Transformer Based or Basic Neural Network for instance)
 
 4. USE : 
