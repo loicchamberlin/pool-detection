@@ -40,7 +40,8 @@ Problematic : Is it possible to simply detect pools using Computer Vision on map
     - Add a function to convert pixel position *(x,y)* to geolocalisation *(longitude, latitude)* : DONE
     - Modify geodata.py function download_satellite_image() to save the image with a right name : DONE
     - Add a mean to save processed image with names that define they're characteristics : DONE 
-    - Add description to methods, classes, etc : TO DO 
+    - Add **description** to methods, classes, etc : TO DO 
+    - Add threading during inference application : TO DO
     - Modify the existing image are used in the program in order to avoid reading/writing them : TO DO
     - Create functionnalities for inference use : IN PROGRESS
     - Create unitests : TO DO
