@@ -7,7 +7,7 @@ Problematic : Is it possible to simply detect pools using Computer Vision on map
 
 **Output** : 
 - Number of pools (integer)
-- List of geographical positions (longitude, latitude)
+- List of geographical positions (list(longitude, latitude))
 
 
 ## Process of [main.py](https://github.com/loicchamberlin/pool-detection/blob/main/Python/main.py)
