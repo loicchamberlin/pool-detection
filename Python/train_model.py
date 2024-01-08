@@ -10,7 +10,7 @@ import xml.etree.ElementTree as ET
 import os
 import argparse, json
 
-from pool_detection.ImageClass.config_deeplearning_model import create_config
+from pool_detection.utils.config_deeplearning_model import create_config
 
 def parse_xml(img_dir, file, index):
     tree = ET.parse(file)
