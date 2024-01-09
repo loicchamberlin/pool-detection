@@ -32,7 +32,7 @@ class GeoData:
     - convert_pixel_to_geolocalisation(x,y): Converts pixel position of a pool detected into its geolocalisation (longitude, latitude)
     """
 
-    def __init__(self, address: str, zoom: int = 20) -> None:
+    def __init__(self, address: str, zoom: int = 19) -> None:
         """
         Initialisation of the class GeoData
 

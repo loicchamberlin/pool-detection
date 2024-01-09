@@ -8,6 +8,15 @@ import os
 
 
 def get_input() -> argparse.Namespace:
+    """
+    Parse the information from the user used for the script (address, zoom level).
+
+    Parameters:
+    None.
+
+    Returns:
+    argparse.Namespace: Informations about the user choice for the script.
+    """
     parser = argparse.ArgumentParser()
     parser.add_argument("--address", type=str, required=True,
                         help='address you want to use to detect pools around. Example : "12\ Chemin\ des\ Gardillots,\ 33610\ Cestas,\ France"')
@@ -18,6 +27,15 @@ def get_input() -> argparse.Namespace:
 
 
 def is_folder_structures_done() -> None:
+    """
+    Verify if the structure is the right one for the good use of the script.
+
+    Parameters:
+    None.
+
+    Returns:
+    None.
+    """
     path_list = ["./ressources/",
                  "./ressources/model/",
                  "./ressources/metadata/",
