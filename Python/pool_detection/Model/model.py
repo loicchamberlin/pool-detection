@@ -1,4 +1,9 @@
 class Model:
+    """
+    Class not used at the moment, need some brainstorming to know what to 
+    do with it.
+    """
+
     path_to_modelfolder = "./ressources/model/"
 
     def __init__(self, name: str) -> None:

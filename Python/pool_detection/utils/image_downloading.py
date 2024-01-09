@@ -1,4 +1,5 @@
 # Credits goes to @andolg on Github for this code
+# https://github.com/andolg/satellite-imagery-downloader/blob/main/src/image_downloading.py
 
 import cv2
 import requests
